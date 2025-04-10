@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodMaps</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="topMenu">
+            <img src="iconFoodMaps-Photoroom.jpg" width="50" alt="Logo FoodMaps">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Restaurantes</a></li>
+                <li><a href="#">Acerca de</a></li>
+            </ul>
+            <input type="text" placeholder="Buscar restaurante...">
+        </div>
+    </header>
+
+    <div id="mapa"></div>
+
+    <div class="textos">
+        <p>📍 Encuentra negocios de comida cerca de ti</p>
+        <p>🍔 Explora menús actualizados en tiempo real</p>
+        <p>📲 Contacta directamente por WhatsApp</p>
+    </div>
+
+    <div class="CTA">
+        <div class="titleCta">
+            <h2>¿Eres dueño de un restaurante?</h2>
+        </div>
+
+        <div class="items">
+
+            <div class="item">
+                <img src="https://irp.cdn-website.com/7aa33798/dms3rep/multi/291683026_376378954599044_6187573265918015278_n.jpg" alt="">
+                <p>Registra tu negocio fácilmente</p>
+            </div>
+            
+            <div class="item">
+            <img src="https://content-management-files.canva.com/cdn-cgi/image/f=auto,q=70/77fadcd3-00a6-4a0d-8437-e2d0cd9e9a3e/header_product-name2.jpg" alt="">
+            <p>Administra tu menú</p>
+            </div>
+
+            <div class="item">
+            <img src="https://images.freeimages.com/images/premium/previews/4057/40578992-abierto-cerrado.jpg" alt="">
+            <p>Gestiona tu Negocio facilmente</p>
+            </div>
+
+            <div class="item">
+            <img src="https://www.marketingdirecto.com/wp-content/uploads/2015/06/conectar.jpg" alt="">
+            <p>Conecta con más clientes</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-contenido">
+    
+            <div class="izquierda">
+                <h3>Recibe novedades de FoodMaps</h3>
+                <div class="form">
+                    <input type="email" placeholder="Correo electrónico">
+                    <button>Suscribirme</button>
+                </div>
+            </div>
+    
+            <div class="derecha">
+                <ul>
+                    <li><a href="#">Sobre nosotros</a></li>
+                    <li><a href="#">Contáctanos</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                </ul>
+            </div>
+    
+        </div>
+    
+        <div class="redes">
+            <a href="mailto:tuemail@ejemplo.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/tuperfil" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/tuperfil" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/tuperfil" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/tuperfil" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        var map = L.map('mapa', {
+            zoomControl: false
+        }).setView([-17.3895, -66.1568], 13);
+    
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: ''
+        }).addTo(map);
+    
+        L.marker([-17.3841757, -66.1551821]).addTo(map)
+            .bindPopup('Davincii<br><a href="https://wa.me/59172243301" target="_blank">Contactar por WhatsApp</a>')
+            .openPopup();
+    </script>
+
+</body>
+</html>
