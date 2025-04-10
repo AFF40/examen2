@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodMaps</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="iconFoodMaps-Photoroom.jpg" alt="FoodMaps Logo">
+            <div class="logo-text">FoodMaps</div>
+        </div>
+        <nav class="header-nav">
+            <a href="#inicio" class="nav-button">Inicio</a>
+            <a href="#explorar" class="nav-button">Explorar</a>
+            <a href="#contacto" class="nav-button">Contacto</a>
+        </nav>
+        <div class="search-container">
+            <input type="text" placeholder="Buscar restaurantes...">
+            <button class="search-button"><i class="fas fa-search"></i></button>
+        </div>
+    </header>
+
+    <section class="about-us">
+        <h1>Sobre nosotros</h1>
+        <div class="branding-section">
+            <div class="branding-content">
+                <h2>Todos los menús al alcance de tu mano</h2>
+                <p>FoodMaps es la plataforma que conecta a los amantes de la buena comida con los mejores restaurantes de Cochabamba. Descubre menús, encuentra promociones y conecta directamente con los establecimientos.</p>
+                <div class="gif-placeholder">
+                    <img src="ico.gif" alt="Demo de la aplicación" style="max-width: 100%; border-radius: 15px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="image-carousel">
+        <div class="carousel-container">
+            <button class="carousel-btn carousel-btn-prev">&#10094;</button>
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="img9.jpeg" alt="Restaurante 9">
+                </div>
+                <div class="carousel-slide active">
+                    <img src="img1.jpeg" alt="Restaurante 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="img2.jpeg" alt="Restaurante 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="img3.jpeg" alt="Restaurante 3">
+                </div>
+                <div class="carousel-slide">
+                    <img src="img4.jpeg" alt="Restaurante 4">
+                </div>
+                <div class="carousel-slide">
+                    <img src="img5.jpeg" alt="Restaurante 5">
+                </div>
+                <div class="carousel-slide">
+                    <img src="img6.jpeg" alt="Restaurante 6">
+                </div>
+                <div class="carousel-slide">
+                    <img src="img7.jpeg" alt="Restaurante 7">
+                </div>
+                <div class="carousel-slide">
+                    <img src="img8.jpeg" alt="Restaurante 8">
+                </div>
+                <div class="carousel-slide">
+                    <img src="img9.jpeg" alt="Restaurante 9">
+                </div>
+                <div class="carousel-slide">
+                    <img src="img1.jpeg" alt="Restaurante 1">
+                </div>
+            </div>
+            <button class="carousel-btn carousel-btn-next">&#10095;</button>
+        </div>
+    </section>
+
+    <section class="about-app">
+        <div class="app-info">
+            <h2>¿Cómo funciona FoodMaps?</h2>
+            <ul>
+                <li>📍 Busca restaurantes en el mapa interactivo</li>
+                <li>📱 Visualiza menús actualizados en tiempo real</li>
+                <li>💬 Contacta directamente vía WhatsApp</li>
+                <li>🔄 Los dueños pueden actualizar su información fácilmente</li>
+            </ul>
+        </div>
+        <div class="app-illustration">
+            <div id="mapa"></div>
+        </div>
+    </section>
+
+    <section class="platforms">
+        <h2>Disponible en todas tus plataformas</h2>
+        <div class="platform-grid">
+            <div class="platform-item">
+                <img src="https://aprendelibvrefiles.blob.core.windows.net/aprendelibvre-container/course/informatica_basica/image/gcfggmaps-01_xl.png" alt="Versión móvil">
+                <h3>App Móvil</h3>
+                <p>Descarga nuestra app para iOS y Android</p>
+            </div>
+            <div class="platform-item">
+                <img src="web.png" alt="Versión web">
+                <h3>Versión Web</h3>
+                <p>Accede desde cualquier navegador</p>
+            </div>
+            <div class="platform-item">
+                <img src="desktop.png" alt="Versión escritorio">
+                <h3>App de Escritorio</h3>
+                <p>Disponible para Windows y macOS</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects">
+        <h2>Restaurantes Destacados</h2>
+        <div class="project-list">
+            <div class="project-item">
+                <h3>Davincii</h3>
+                <p>Uno de los restaurantes mejor valorados en la ciudad con comida italiana de alta calidad.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Italiana</span>
+                    <span class="project-tag">Romántico</span>
+                    <span class="project-tag">4.8 ★</span>
+                </div>
+            </div>
+            <div class="project-item">
+                <h3>La Casa del Chef</h3>
+                <p>Experiencia gastronómica única con platos tradicionales reinventados.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Fusión</span>
+                    <span class="project-tag">Gourmet</span>
+                    <span class="project-tag">4.7 ★</span>
+                </div>
+            </div>
+            <div class="project-item">
+                <h3>Sabor Oriental</h3>
+                <p>Auténtica comida asiática preparada por chefs especializados.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Asiática</span>
+                    <span class="project-tag">Rápido</span>
+                    <span class="project-tag">4.5 ★</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>¿Eres dueño de un restaurante?</h2>
+        <p>Registra tu negocio y llega a más clientes</p>
+        <div class="contact-form">
+            <input type="text" placeholder="Nombre del restaurante">
+            <input type="email" placeholder="Correo electrónico">
+            <textarea placeholder="Cuéntanos sobre tu restaurante" rows="4"></textarea>
+            <button>Registrarme</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>© 2023 FoodMaps. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Carrusel mejorado
+        document.addEventListener('DOMContentLoaded', function() {
+        const track = document.querySelector('.carousel-track');
+        const slides = document.querySelectorAll('.carousel-slide:not(.cloned)');
+        const prevBtn = document.querySelector('.carousel-btn-prev');
+        const nextBtn = document.querySelector('.carousel-btn-next');
+        
+        let currentIndex = 0;
+        let autoSlideInterval;
+        const slideCount = slides.length;
+        let slideWidth = track.offsetWidth / 3; // 3 slides visibles
+        
+        // Clonar slides para efecto infinito
+        function cloneSlides() {
+            const firstSlides = Array.from(slides).slice(0, 3);
+            const lastSlides = Array.from(slides).slice(-3);
+            
+            // Clonar y añadir al final
+            lastSlides.forEach(slide => {
+                const clone = slide.cloneNode(true);
+                clone.classList.add('cloned');
+                track.appendChild(clone);
+            });
+            
+            // Clonar y añadir al principio
+            firstSlides.reverse().forEach(slide => {
+                const clone = slide.cloneNode(true);
+                clone.classList.add('cloned');
+                track.insertBefore(clone, track.firstChild);
+            });
+            
+            // Actualizar el ancho de los slides
+            slideWidth = track.offsetWidth / 3;
+            
+            // Posicionar en el slide real inicial
+            currentIndex = 3; // Empezar en el primer slide original
+            goToSlide(currentIndex, false);
+        }
+
+        // Mover al slide específico
+        function goToSlide(index, animate = true) {
+            currentIndex = index;
+            const offset = -currentIndex * slideWidth + (track.offsetWidth / 3);
+            
+            track.style.transition = animate ? 'transform 0.5s ease' : 'none';
+            track.style.transform = `translateX(${offset}px)`;
+            
+            updateActiveSlide();
+        }
+
+        // Actualizar slide activo (central)
+        function updateActiveSlide() {
+            const allSlides = document.querySelectorAll('.carousel-slide');
+            allSlides.forEach(slide => slide.classList.remove('active'));
+            
+            // El slide activo es el central (currentIndex + 1)
+            const activeIndex = currentIndex + 1;
+            if (allSlides[activeIndex]) {
+                allSlides[activeIndex].classList.add('active');
+            }
+        }
+
+        // Slide siguiente
+        function nextSlide() {
+            if (currentIndex >= slideCount + 2) {
+                currentIndex = 3;
+                goToSlide(currentIndex, false);
+                setTimeout(() => nextSlide(), 50);
+            } else {
+                currentIndex++;
+                goToSlide(currentIndex);
+            }
+        }
+
+        // Slide anterior
+        function prevSlide() {
+            if (currentIndex <= 1) {
+                currentIndex = slideCount + 2;
+                goToSlide(currentIndex, false);
+                setTimeout(() => prevSlide(), 50);
+            } else {
+                currentIndex--;
+                goToSlide(currentIndex);
+            }
+        }
+
+        // Iniciar auto-desplazamiento
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 5000);
+        }
+
+        // Pausar auto-desplazamiento
+        function pauseAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+
+        // Event listeners
+        nextBtn.addEventListener('click', () => {
+            pauseAutoSlide();
+            nextSlide();
+            startAutoSlide();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            pauseAutoSlide();
+            prevSlide();
+            startAutoSlide();
+        });
+
+        // Pausar al hacer hover
+        track.addEventListener('mouseenter', pauseAutoSlide);
+        track.addEventListener('mouseleave', startAutoSlide);
+
+        // Reiniciar posición al finalizar transición
+        track.addEventListener('transitionend', () => {
+            if (currentIndex >= slideCount + 2) {
+                currentIndex = 3;
+                goToSlide(currentIndex, false);
+            } else if (currentIndex <= 0) {
+                currentIndex = slideCount;
+                goToSlide(currentIndex, false);
+            }
+        });
+
+        // Redimensionar ventana
+        window.addEventListener('resize', () => {
+            slideWidth = track.offsetWidth / 3;
+            goToSlide(currentIndex, false);
+        });
+
+        // Inicializar
+        cloneSlides();
+        startAutoSlide();
+    });
+    
+            // Mapa Leaflet
+            var map = L.map('mapa', {
+                zoomControl: false
+            }).setView([-17.3895, -66.1568], 13);
+    
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: ''
+            }).addTo(map);
+    
+            // Marcadores
+            const markers = [
+                {
+                    coords: [-17.3841757, -66.1551821],
+                    content: 'Davincii<br><a href="https://wa.me/59172243301" target="_blank">Contactar por WhatsApp</a>'
+                },
+                {
+                    coords: [-17.3865, -66.1582],
+                    content: 'La Casa del Chef<br><a href="https://wa.me/59172243302" target="_blank">Contactar por WhatsApp</a>'
+                },
+                {
+                    coords: [-17.3920, -66.1520],
+                    content: 'Sabor Oriental<br><a href="https://wa.me/59172243303" target="_blank">Contactar por WhatsApp</a>'
+                }
+            ];
+    
+            markers.forEach(marker => {
+                L.marker(marker.coords)
+                    .addTo(map)
+                    .bindPopup(marker.content);
+            });
+        
+    </script>
+</body>
+
+</html>
